@@ -21,6 +21,12 @@
     <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-alert.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-dropdown.js"></script>
     {% include 'header.html' %}
+    {% if flash.message %}
+        <div class="alert alert-info offset6 span4"
+             style="text-align: center; margin-top: 10px;z-index: 99999;position: absolute;margin-top: 130px" id="flashMessage">
+            {{ flash.message }}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block javascripts %}

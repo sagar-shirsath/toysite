@@ -98,6 +98,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'djangoflash.middleware.FlashMiddleware',
+
 
 
     # Uncomment the next line for simple clickjacking protection:
@@ -117,7 +119,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages",
-#    'djangoflash.context_processors.flash',
+    'djangoflash.context_processors.flash',
     'django.core.context_processors.request'
     )
 
@@ -182,3 +184,7 @@ LOGGING = {
         }
 }
 
+FLASH_IGNORE_MEDIA = True
+LOGIN_REDIRECT_URL = "/"
+
+FLASH_STORAGE = 'session'

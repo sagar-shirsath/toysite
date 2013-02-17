@@ -1,0 +1,37 @@
+{% block header %}
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="{{STATIC_URL}}css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-alert.js"></script>
+    <script type="text/javascript" src="{{STATIC_URL}}js/bootstrap-dropdown.js"></script>
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+<div style="min-height: 550px">
+{% block content %}
+{% endblock %}
+</div>
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+
+

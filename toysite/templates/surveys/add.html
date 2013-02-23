@@ -1,0 +1,58 @@
+{% extends 'site_base.html' %}
+{% block content %}
+<script type="text/javascript">
+    var question = 1;
+    var option = 2;
+    function addoption(){
+        option++;
+        $('#surveyform').append('<div class="control-group"><label class="control-label" for="input'+option+''+question+'">Option '+option+'</label>'+'' +
+                ' <div class="controls"><input type="text" class="input-xlarge" id="input'+option+''+question+'" name="'+
+                question+','+option+'"></div></div>');
+    }
+
+    function addquestion(){
+        question++;
+        option = 0;
+        $('#surveyform').append('<div class="control-group"><label class="control-label" for="input'+option+''+question+'"><B>Question '+question+'</B></label>'+'' +
+                ' <div class="controls"><input type="text" class="input-xlarge" id="input'+option+''+question+'"  name="'+question+',*"></div></div>');
+    }
+</script>
+
+<h2>Create Survey</h2>
+<form action="." method="post" class="form-horizontal well">{% csrf_token %}
+    <div id="surveyform">
+        <div class="control-group">
+            <label class="control-label" for="input01">Survey Title</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" id="input01" name="survey_title">
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="input02"><B>Question 1</B></label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" id="input02" name="1,*">
+
+            </div>
+        </div>
+         <div class="control-group">
+            <label class="control-label" for="input03">Option 1</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" id="input03" name="1,1">
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="input04">Option 2</label>
+            <div class="controls">
+                <input type="text" class="input-xlarge" id="input04" name="1,2">
+
+            </div>
+        </div>
+    </div>
+        <input type="button" value="add Option" onclick="addoption();" />
+        <input type="button" value="add Question" onclick="addquestion();" />
+
+    <input type="submit" value="save survey">
+</form>
+{% endblock %}

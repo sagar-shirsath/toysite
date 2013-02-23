@@ -13,6 +13,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="bucksell" />
   </component>
   <component name="TemplatesService">
     <option name="templateLanguage" value="Django" />

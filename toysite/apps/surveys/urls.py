@@ -13,4 +13,8 @@ urlpatterns = patterns('',
         views.summery,
         name='survey_summery'),
 
+    url(r'^submit/(?P<id>\d+)$',
+        views.submit,
+        name='survey_submit'),
+
 )

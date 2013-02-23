@@ -1,0 +1,14 @@
+{% extends 'site_base.html' %}
+{% block content %}
+    <h3>Please select one of  the answers to the questions </h3>
+    <B>Survey Title</B>{{ servey.title }}<br>
+    {% for question in survey.question_set.all %}
+        <span class="alert-heading">Question :{{ question.title }}<br />
+        {% for option in  question.option_set.all%}
+        Options : <input type="radio" name="question.id">{{ option.title }} &nbsp;
+
+    {% endfor %}
+        <br />
+    {% endfor %}
+    <input type="submit" value="submit" />
+{% endblock %}

@@ -1,3 +1,12 @@
 {% extends 'site_base.html' %}
+
 {% block content %}
+
+    <ul class="nav nav-list">
+    {% for survey in surveys %}
+    <li>
+        <a href="{% url survey_submit survey.id %}">{{ survey.title}}</a>
+    </li>
+    {% endfor %}
+    </ul>
 {% endblock %}

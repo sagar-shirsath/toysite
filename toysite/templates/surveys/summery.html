@@ -1,0 +1,11 @@
+{% extends 'site_base.html' %}
+{% block content %}
+    <h3>Users that has given answers to this survey</h3>
+    {% if surveyAnswers %}
+    {% for answer in surveyAnswers %}
+        <h5>{{ answer.user }}</h5>
+    {% endfor  %}
+    {% else %}
+        No user has given anwers to this Survey yet!
+    {% endif %}
+{% endblock %}

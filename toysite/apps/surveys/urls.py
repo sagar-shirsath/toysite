@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^add/$',
         views.add,
         name='survey_add'),
-    url(r'^summary/$',
+    url(r'^summary/(?P<id>\d+)$',
         views.summery,
         name='survey_summery'),
 

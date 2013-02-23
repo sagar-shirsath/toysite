@@ -2,10 +2,10 @@
 
 {% block content %}
 
-    <ul class="nav nav-list">
+    <ul class="">
     {% for survey in surveys %}
     <li>
-        <a href="{% url survey_submit survey.id %}">{{ survey.title}}</a>
+        <a href="{% url survey_submit survey.id %}">{{ survey.title}}</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="{% url survey_summery  survey.id%}">View Summery</a>
     </li>
     {% endfor %}
     </ul>

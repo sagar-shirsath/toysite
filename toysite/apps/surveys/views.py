@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from surveys.models import *
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+import unittest
 
 
 @login_required
@@ -13,7 +14,7 @@ def list(request):
     """Shows the list of Surveys """
     surveys = Survey.objects.all()
 
-    return render_to_response("surveys/list.html", {'surveys':surveys}, context_instance=RequestContext(request))
+    return render_to_response("xsurveys/list.html", {'surveys':surveys}, context_instance=RequestContext(request))
 
 @login_required
 def add(request):
